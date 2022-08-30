@@ -15,6 +15,9 @@ master's thesis:
 
 See also: [openiss-yolov3](https://github.com/OpenISS/openiss-yolov3).
 
+## Introduction
+This repository has been configured to run on Concordia's HPC Cluster (speed)
+
 ## Concordia's HPC (Speed) Manual
 https://github.com/NAG-DevOps/speed-hpc/blob/master/doc/speed-manual.pdf
 
@@ -46,7 +49,7 @@ To train or try the model out, go to the very end of the `reid.py` file. Comment
 and uncomment the method you want
 
 ```
-*** IMPORTANT ***  
+**IMPORTANT**  
 Modify the script `openiss-2-speed.sh` to setup the job to be ready for CPUs or GPUs nodes; h_vmem= and gpu= CAN'T be enabled at the same time
 ```
 
