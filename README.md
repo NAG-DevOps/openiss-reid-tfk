@@ -27,7 +27,7 @@ TEST DATASET: Market1501
 
 ---- Gallery images: 15913
 
-The pre-requisites to prepare the environment is located in `environment.yml`.
+The pre-requisites to prepare the environment are located in `environment.yml`.
 
 ## Prepare 
 
