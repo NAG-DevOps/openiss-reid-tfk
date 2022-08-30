@@ -15,35 +15,44 @@ master's thesis:
 
 See also: [openiss-yolov3](https://github.com/OpenISS/openiss-yolov3).
 
-## Enviornment
+## Environment
 
-A powerful GPU is required for running the code, with Nivida GTX 1070ti, a training with the standard 120 epochs
-will take almost 4 hours.
+In our Speed cluster using GPUs, it could take up to 4 days to complete the training at 120 epochs.
 
-This implementatoin is based on tensorflow and keras (currently not other backend are suppoted rather
-than `tf`), the tested version are listed below:
+TEST DATASET: Market1501
 
-- python:               3.6.7
-- tensorflow:           1.12.0
-- tensorflow-base:      1.12.0
-- tensorflow-gpu:       1.12.0
-- keras:                2.2.4
-- keras-applications:   1.0.6
-- keras-base:           2.2.4
-- keras-preprocessing:  1.0.5
+---- Train images: 12936
+
+---- Query images: 3368
+
+---- Gallery images: 15913
+
+The pre-requisites to prepare the environment is located in `environment.yml`.
+
+## Prepare 
+
+Once logged into Speed, go to your speed-scratch directory:  `cd /speed-scratch/$USER/` and clone/download this git repository.
+
+Before you run the script, you need to specify the dataset directory location. Go to the `reid.py` file,
+check the global variable named `g_data_root`. If you don't have the dataset yet, you can get the dataset by
+using the script in the `datasets` folder. If you do so, set `g_data_root = './datasets'`.
+
+To download the test dataset go to:  `datasets/` and run `get_dataset_market1501.sh`
+
+To train or try the model out, go to the very end of the `reid.py` file. Comment the method you don't want
+and uncomment the method you want
+
+*** IMPORTANT ***
+Modify the script `openiss-2-speed.sh` to setup the job to be ready for CPUs or GPUs nodes; h_vmem= and gpu= CAN'T be enabled at the same time
 
 ## Run
 
-Before you run, you need to speicify the dataset directory in your local machine. Go to the `reid.py` file,
-check the global variable named `g_data_root`. If you don't have the dataset yet, you can get the dataset by
-using the srcipt in the `datasets` folder. If you do so, set `g_data_root = './datasets'`.
+On CPUs nodes: `qsub ./openiss-2-speed.sh`
+On GPUs nodes: `qsub -q g.q ./openiss-2-speed.sh`
 
-To train or try the model out, go to the very end of the `reid.py` file. Comment the method you don't want
-and uncomment the method you want then launch the terminal and run:
+## Results
+The result files are located in `output/cross_ds_v/`
 
-```
-python reid.py
-```
 
 ## Theory
 

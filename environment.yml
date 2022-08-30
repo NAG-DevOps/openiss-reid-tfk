@@ -1,0 +1,16 @@
+# Packages needed to run the job on GPUs:
+# cudatoolkit=9.0, cudnn=7, tensorflow-gpu==1.12.0
+#
+name: myconda
+channels:
+- anaconda
+- defaults
+dependencies:
+- python=3.6.7
+- cudatoolkit=9.0
+- cudnn=7
+- pip:
+  - tensorflow==1.12.0
+  - tensorflow-gpu==1.12.0
+  - keras==2.2.4
+  - pillow

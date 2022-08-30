@@ -31,7 +31,7 @@ print('version of keras: {}'.format(keras.__version__))
 
 ''' global variables '''
 # g_data_root  = '/home/h_lai/Documents/dl/reid/triplet/datasets'
-g_data_root = '../datasets'
+g_data_root = './datasets'
 # g_output_dir = './output'
 g_output_dir = './output/cross_ds_v'
 mkdir_if_missing(g_output_dir)
@@ -110,6 +110,7 @@ tmp_ft = GlobalAveragePooling2D(name='triplet')(g_base.output)
 # tmp_fi = BatchNormalization(scale=False)(tmp_ft)
 tmp_fi = BatchNormalization()(tmp_ft)
 feat_model = Model(inputs=g_base.input, outputs=tmp_fi)
+
 # feat_model = Model(inputs=base.input, outputs=feature_t)
 
 tmp_pred = Dense(g_num_classes, activation='softmax',
