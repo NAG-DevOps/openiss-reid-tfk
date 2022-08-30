@@ -15,6 +15,9 @@ master's thesis:
 
 See also: [openiss-yolov3](https://github.com/OpenISS/openiss-yolov3).
 
+## Concordia's HPC (Speed) Manual
+https://github.com/NAG-DevOps/speed-hpc/blob/master/doc/speed-manual.pdf
+
 ## Environment
 
 In our Speed cluster using GPUs, it could take up to 4 days to complete the training at 120 epochs.
@@ -49,7 +52,7 @@ Modify the script `openiss-2-speed.sh` to setup the job to be ready for CPUs or 
 
 ## Run
 
-On CPUs nodes: `qsub ./openiss-2-speed.sh`
+On CPUs nodes: `qsub ./openiss-2-speed.sh`  
 On GPUs nodes: `qsub -q g.q ./openiss-2-speed.sh`
 
 ## Results
