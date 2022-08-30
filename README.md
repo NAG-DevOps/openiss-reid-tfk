@@ -42,7 +42,7 @@ To download the test dataset go to:  `datasets/` and run `get_dataset_market1501
 To train or try the model out, go to the very end of the `reid.py` file. Comment the method you don't want
 and uncomment the method you want
 
-*** IMPORTANT ***__
+*** IMPORTANT ***  
 Modify the script `openiss-2-speed.sh` to setup the job to be ready for CPUs or GPUs nodes; h_vmem= and gpu= CAN'T be enabled at the same time
 
 ## Run
