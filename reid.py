@@ -233,6 +233,9 @@ def test(load_weight_path):
     print('[reid] benchmark ...')
     g_model.load_weights(load_weight_path)
     res = g_tester.compute()
+    f = open("output/cross_ds_v/test_log.txt", "w")
+    f.write(','.join(map(str, res)))
+    f.close()   
     print(res)
 
 def cross_dataset_test(model_path, ds1, ds2):
