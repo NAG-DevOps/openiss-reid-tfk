@@ -23,6 +23,8 @@ This implementatoin is based on tensorflow and keras (currently not other backen
 
 The pre-requisites to prepare the environment are located in `environment.yml`.
 
+We suggest you to run the script in any Python virtual environment and install the packages versions as described in `environment.yml`.
+
 ## Run
 
 Before you run the script, you need to specify the dataset directory location. Go to the `reid.py` file,
