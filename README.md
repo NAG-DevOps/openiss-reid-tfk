@@ -34,9 +34,9 @@ To download the test dataset go to:  `datasets/` and run `get_dataset_market1501
 To train or try the model out, go to the very end of the `reid.py` file. Comment the method you don't want
 and uncomment the method you want and run:
 
-'''
+```
 python reid.py
-'''
+```
 
 ## Results
 The result files are located in `output/cross_ds_v/`
