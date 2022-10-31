@@ -10,7 +10,7 @@ dependencies:
 - cudatoolkit=9.0
 - cudnn=7
 - pip:
-  - tensorflow==1.12.0
+  # - tensorflow==1.12.0
   - tensorflow-gpu==1.12.0
   - keras==2.2.4
   - pillow
