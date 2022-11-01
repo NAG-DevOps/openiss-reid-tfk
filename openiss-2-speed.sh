@@ -13,6 +13,7 @@
 #$ -cwd
 
 # Request CPU
+# #$ -pe smp 32
 # #$ -l h_vmem=32G
 
 # Request GPU

@@ -23,7 +23,7 @@ https://github.com/NAG-DevOps/speed-hpc/blob/master/doc/speed-manual.pdf
 
 ## Environment
 
-In our Speed cluster using GPUs, it could take up to 4 days to complete the training at 120 epochs.
+In our Speed cluster using GPUs, it could take up to 4 hours to complete the training at 120 epochs.
 
 TEST DATASET: Market1501
 
@@ -50,7 +50,7 @@ and uncomment the method you want
 
 ```
 **IMPORTANT**  
-Modify the script `openiss-2-speed.sh` to setup the job to be ready for CPUs or GPUs nodes; h_vmem= and gpu= CAN'T be enabled at the same time
+Modify the script `openiss-2-speed.sh` to setup the job to be ready for CPUs or GPUs nodes (read Request CPU and GPU sections) 
 ```
 
 ## Run
