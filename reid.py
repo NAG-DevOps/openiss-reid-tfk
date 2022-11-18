@@ -260,7 +260,5 @@ Training Checklist
     5. what kind of preprocessing
 '''
 
-# train_and_test('weight_id_and_triplet_loss.h5')
-# train_only_id_loss('weights_only_id_loss.h5')
-# test('backup/cmc85.39/weights.h5')
+# test('weights.h5')
 train(g_model, 'weights.h5')
