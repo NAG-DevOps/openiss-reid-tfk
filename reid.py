@@ -24,10 +24,11 @@ from iotool import mkdir_if_missing, check_isfile
 
 
 import os
-os.environ['CUDA_VISIBLE_DEVICES']='2'
+os.environ['CUDA_VISIBLE_DEVICES']='0,1'
 
 print('version of tensorflow: {}'.format(tf.VERSION))
 print('version of keras: {}'.format(keras.__version__))
+print("Num of GPUs available: ", len(tf.test.gpu_device_name()))
 
 ''' global variables '''
 # g_data_root  = '/home/h_lai/Documents/dl/reid/triplet/datasets'
