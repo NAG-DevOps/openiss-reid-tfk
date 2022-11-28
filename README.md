@@ -47,3 +47,14 @@ The result files are located in `output/cross_ds_v/`
 ## Theory
 
 For the theory behind the code, please check with the wiki.
+
+## Configuration on Conda Virtual Environment
+- Conda/anaconda must be installed in your system
+- Clone this repo
+- To download the dataset go to:  datasets/ and run get_dataset_market1501.sh
+- In reid.py set the epochs (g_epochs=120 by default)
+- To create the environment: conda env create -f environment.yml -p /your_path/name_of_environment
+- Run conda activate /your_path/name_of_environment
+- Run python reid.py to execute the program
+- once finished: conda deactivate
+- To remove remove environment: conda env remove -p /your_path/name_of_environment
