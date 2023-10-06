@@ -24,14 +24,15 @@ from iotool import mkdir_if_missing, check_isfile
 
 
 import os
-os.environ['CUDA_VISIBLE_DEVICES']='2'
+os.environ['CUDA_VISIBLE_DEVICES']='0,1'
 
 print('version of tensorflow: {}'.format(tf.VERSION))
 print('version of keras: {}'.format(keras.__version__))
+print("Num of GPUs available: ", len(tf.test.gpu_device_name()))
 
 ''' global variables '''
 # g_data_root  = '/home/h_lai/Documents/dl/reid/triplet/datasets'
-g_data_root = '../datasets'
+g_data_root = './datasets'
 # g_output_dir = './output'
 g_output_dir = './output/cross_ds_v'
 mkdir_if_missing(g_output_dir)
@@ -110,6 +111,7 @@ tmp_ft = GlobalAveragePooling2D(name='triplet')(g_base.output)
 # tmp_fi = BatchNormalization(scale=False)(tmp_ft)
 tmp_fi = BatchNormalization()(tmp_ft)
 feat_model = Model(inputs=g_base.input, outputs=tmp_fi)
+
 # feat_model = Model(inputs=base.input, outputs=feature_t)
 
 tmp_pred = Dense(g_num_classes, activation='softmax',
@@ -232,6 +234,9 @@ def test(load_weight_path):
     print('[reid] benchmark ...')
     g_model.load_weights(load_weight_path)
     res = g_tester.compute()
+    f = open("output/cross_ds_v/test_log.txt", "w")
+    f.write(','.join(map(str, res)))
+    f.close()   
     print(res)
 
 def cross_dataset_test(model_path, ds1, ds2):
@@ -255,7 +260,5 @@ Training Checklist
     5. what kind of preprocessing
 '''
 
-# train_and_test('weight_id_and_triplet_loss.h5')
-# train_only_id_loss('weights_only_id_loss.h5')
-# test('backup/cmc85.39/weights.h5')
+# test('weights.h5')
 train(g_model, 'weights.h5')
